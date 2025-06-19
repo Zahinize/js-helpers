@@ -24,4 +24,27 @@ const createLinkedList = (arr) => {
     }
     
     return llist;
-}
+};
+
+/*** Create a Doubly LinkedList from an Array ***/
+const createDoublyLinkedList = (arr) => {
+    let doublyLL = {
+        data: arr.shift(),
+        prev: null,
+        next: null
+    };
+    let current = doublyLL;
+    
+    while (arr.length) {
+        let node = {
+            data: arr.shift(),
+            prev: null,
+            next: null
+        };
+        node.prev = current;
+        current.next = node;
+        current = node;
+    }
+    
+    return doublyLL;
+};
