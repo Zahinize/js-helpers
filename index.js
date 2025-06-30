@@ -48,3 +48,21 @@ const createDoublyLinkedList = (arr) => {
     
     return doublyLL;
 };
+
+/** Reverse an array using an in-place algorithm **/
+const reverseInPlace = (arr) => {
+    for (let i=0; i<=Math.floor((arr.length-2)/2); i++) {
+        let temp = arr[i];
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = temp;
+    }
+
+    return arr;
+}
+
+/** Get number range using recursion **/
+const getRange = (start, end) => {
+    if (start === end) return [start];
+
+    return [start, ...getRange(start + 1, end)];
+};
