@@ -66,3 +66,9 @@ const getRange = (start, end) => {
 
     return [start, ...getRange(start + 1, end)];
 };
+
+/** Get decimal representation from a binary number **/
+const getDecimalFromBinary = (num) => parseInt(num, 2);
+
+/** Get binary representation from a decimal number **/
+const getBinaryFromDecimal = (num) => num.toString(2);
