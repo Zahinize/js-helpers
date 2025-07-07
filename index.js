@@ -72,3 +72,35 @@ const getDecimalFromBinary = (num) => parseInt(num, 2);
 
 /** Get binary representation from a decimal number **/
 const getBinaryFromDecimal = (num) => num.toString(2);
+
+/** Create a fibonacci series **/
+const fibonacci = (arr, n) => {
+    if (n <= 2) {
+        arr.splice(n);
+        return arr;
+    }
+
+    const result = structuredClone(arr);
+    for (let i = arr.length; i < n; i++) {
+        let item = result[i - 1] + result[i - 2];
+        result.push(item);
+    }
+
+    return result;
+}
+
+/** Create a tribonacci series **/
+const tribonacci = (arr, n) => {
+    if (n < 3) {
+        arr.splice(n);
+        return arr;
+    };
+
+    const result = structuredClone(arr);
+    for (let i = arr.length; i < n; i++) {
+        let item = result[i - 1] + result[i - 2] + result[i - 3];
+        result.push(item);
+    }
+
+    return result;
+}
